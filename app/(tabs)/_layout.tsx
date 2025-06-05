@@ -1,7 +1,7 @@
 // app/_layout.tsx
 
-import NamePrompt from "@/components/NamePrompt";
-import { useUserStore } from "@/store/userStore";
+import NamePrompt from "@/src/components/NamePrompt";
+import { useUserStore } from "@/src/store/userStore";
 import { Feather } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 import React from "react";

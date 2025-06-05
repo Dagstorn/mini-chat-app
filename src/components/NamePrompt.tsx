@@ -1,5 +1,4 @@
-import { useUserStore } from "@/store/userStore";
-import React, { useState } from "react";
+import React from "react";
 import {
   ActivityIndicator,
   Modal,
@@ -8,45 +7,12 @@ import {
   TextInput,
   View,
 } from "react-native";
+import { useNamePrompt } from "../hooks/useNamePrompt";
 
 const NamePrompt: React.FC = () => {
-  const name = useUserStore((state) => state.name);
-  const setName = useUserStore((state) => state.setName);
-
-  const [input, setInput] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const { name, input, setInput, loading, error, onSubmit } = useNamePrompt();
 
   if (name) return null;
-
-  const onSubmit = async () => {
-    const trimmed = input.trim();
-    if (trimmed.length === 0) return;
-
-    setLoading(true);
-    setError("");
-
-    try {
-      const res = await fetch("http://localhost:3000/contacts", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: trimmed }),
-      });
-
-      if (res.status === 201) {
-        setName(trimmed);
-      } else if (res.status === 409) {
-        setError("That name is already taken.");
-      } else {
-        setError("Something went wrong. Please try again.");
-      }
-    } catch (e) {
-      console.error(e);
-      setError("Network error. Please try again.");
-    } finally {
-      setLoading(false);
-    }
-  };
 
   return (
     <Modal visible transparent animationType="fade" statusBarTranslucent>
