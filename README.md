@@ -56,4 +56,4 @@ npx expo start
 
 ## 🧪 Testing
 
-Basic manual testing supported. To improve:
+Basic unit testing in ./src/**tests**
