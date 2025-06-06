@@ -1,18 +1,17 @@
-// src/components/MessageInput.tsx
-import React, { useState } from "react";
-import { Pressable, Text, TextInput, View } from "react-native";
+import React, { useState } from 'react';
+import { Pressable, Text, TextInput, View } from 'react-native';
 
 interface MessageInputProps {
   onSend: (text: string) => void;
 }
 
 export const MessageInput: React.FC<MessageInputProps> = ({ onSend }) => {
-  const [inputText, setInputText] = useState("");
+  const [inputText, setInputText] = useState('');
 
   const handleSend = () => {
     if (!inputText.trim()) return;
     onSend(inputText.trim());
-    setInputText("");
+    setInputText('');
   };
 
   return (

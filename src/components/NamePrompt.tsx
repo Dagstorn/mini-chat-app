@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   ActivityIndicator,
   Modal,
@@ -6,8 +6,8 @@ import {
   Text,
   TextInput,
   View,
-} from "react-native";
-import { useNamePrompt } from "../hooks/useNamePrompt";
+} from 'react-native';
+import { useNamePrompt } from '../hooks/useNamePrompt';
 
 const NamePrompt: React.FC = () => {
   const { name, input, setInput, loading, error, onSubmit } = useNamePrompt();
@@ -34,10 +34,11 @@ const NamePrompt: React.FC = () => {
             <Text className="text-red-500 text-sm mb-2">{error}</Text>
           ) : null}
           <Pressable
+            testID="submit-button"
             onPress={onSubmit}
             disabled={input.trim().length === 0 || loading}
             className={`rounded-md justify-center items-center px-3 py-2 ${
-              input.trim().length > 0 ? "bg-blue-600" : "bg-gray-400"
+              input.trim().length > 0 ? 'bg-blue-600' : 'bg-gray-400'
             }`}
           >
             {loading ? (

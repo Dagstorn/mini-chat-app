@@ -1,12 +1,12 @@
-import { ChatHeader } from "@/src/components/ChatHeader";
-import { MessageBubble } from "@/src/components/MessageBubble";
-import { MessageInput } from "@/src/components/MessageInput";
-import { useChat } from "@/src/hooks/useChat";
-import { useUserStore } from "@/src/store/userStore";
-import { useLocalSearchParams } from "expo-router";
-import React from "react";
-import { FlatList, KeyboardAvoidingView, Platform } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { ChatHeader } from '@/src/components/ChatHeader';
+import { MessageBubble } from '@/src/components/MessageBubble';
+import { MessageInput } from '@/src/components/MessageInput';
+import { useChat } from '@/src/hooks/useChat';
+import { useUserStore } from '@/src/store/userStore';
+import { useLocalSearchParams } from 'expo-router';
+import React from 'react';
+import { FlatList, KeyboardAvoidingView, Platform } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const ChatDetails: React.FC = () => {
   const { id: chatId } = useLocalSearchParams<{ id: string }>();
@@ -16,7 +16,10 @@ const ChatDetails: React.FC = () => {
   return (
     <SafeAreaView className="flex-1 bg-white">
       <KeyboardAvoidingView
-        behavior={Platform.select({ ios: "padding", android: undefined })}
+        behavior={Platform.select({
+          ios: 'padding',
+          android: undefined,
+        })}
         className="flex-1"
         keyboardVerticalOffset={10}
       >
@@ -37,7 +40,7 @@ const ChatDetails: React.FC = () => {
           keyboardDismissMode="interactive"
           contentContainerStyle={{
             flexGrow: 1,
-            justifyContent: "flex-end",
+            justifyContent: 'flex-end',
           }}
           keyboardShouldPersistTaps="handled"
         />

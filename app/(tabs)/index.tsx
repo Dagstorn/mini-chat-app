@@ -1,8 +1,8 @@
-import { ChatItem } from "@/src/components/ChatItem";
-import { useChatsList } from "@/src/hooks/useChatsList";
-import { useUserStore } from "@/src/store/userStore";
-import React from "react";
-import { FlatList, Text, View } from "react-native";
+import { ChatItem } from '@/src/components/ChatItem';
+import { useChatsList } from '@/src/hooks/useChatsList';
+import { useUserStore } from '@/src/store/userStore';
+import React from 'react';
+import { FlatList, Text, View } from 'react-native';
 
 const Chats: React.FC = () => {
   const { name: userName } = useUserStore();
