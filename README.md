@@ -35,9 +35,6 @@ src/
 - Node.js (v16+)
 - Android Studio or Xcode for emulator/simulator
 - Expo CLI
-  ```bash
-  npm install -g expo-cli
-  ```
 
 ### Backend
 
